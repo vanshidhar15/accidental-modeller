@@ -1,0 +1,17 @@
+{
+  "system_name": "Payment Service",
+  "description": "Handles card payments for ecommerce checkout",
+  "components": ["Frontend", "API Gateway", "Payment Service", "PostgreSQL", "Stripe"],
+  "data_flows": [
+    {
+      "source": "Frontend",
+      "destination": "API Gateway",
+      "data": "payment request"
+    }
+  ],
+  "external_integrations": ["Stripe"],
+  "authentication": "JWT",
+  "sensitive_data": ["card token", "user id", "billing address"],
+  "trust_boundaries": ["Internet to API Gateway", "Internal service to Stripe"],
+  "environment": "Cloud"
+}
