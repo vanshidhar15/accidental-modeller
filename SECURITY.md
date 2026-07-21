@@ -34,7 +34,7 @@ This project is maintained on a best-effort basis.
 
 I will aim to:
 
-- Acknowledge valid reports within 7 days
+- I will review valid reports as soon as reasonably possible.
 - Investigate and assess the impact
 - Provide updates when meaningful progress is made
 - Publish a fix or mitigation when reasonably possible
