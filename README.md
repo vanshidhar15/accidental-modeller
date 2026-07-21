@@ -1,3 +1,7 @@
+![Python](https://img.shields.io/badge/Python-3.14-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Latest-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Version](https://img.shields.io/badge/version-v0.2.0-orange)
 # Accidental Modeller
 
 > Lightweight rule-based STRIDE threat modeling for modern applications.
@@ -10,11 +14,6 @@ Automatically generate:
 - Markdown reports
 
 ...from a simple description of your system architecture.
-
-![Python](https://img.shields.io/badge/Python-3.14-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-Latest-green)
-![License](https://img.shields.io/badge/License-MIT-yellow)
-![Version](https://img.shields.io/badge/version-v0.2.0-orange)
 
 ---
 
