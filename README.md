@@ -1,97 +1,88 @@
 # Accidental Modeller
 
-> AI-assisted threat modeling for engineers.
+> Lightweight rule-based STRIDE threat modeling for modern applications.
 
-[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)]()
-[![FastAPI](https://img.shields.io/badge/FastAPI-Framework-green.svg)]()
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)]()
+Automatically generate:
 
-## 🚧 Project Status
+- STRIDE threats
+- Security requirements
+- Security review questions
+- Markdown reports
 
-**Accidental Modeller** is currently an early-stage prototype under active development.
+...from a simple description of your system architecture.
 
-The core functionality is operational, and the project is evolving rapidly. Features, prompts, and report formats may change as the project matures.
-
-Feedback, suggestions, and contributions are always welcome.
-
----
-
-# Why Accidental Modeller?
-
-Threat modeling is one of the most valuable security activities during software development.
-
-Unfortunately, it is also one of the least adopted because it is often:
-
-- Time consuming
-- Documentation heavy
-- Difficult for developers unfamiliar with security
-- Dependent on security specialists
-
-Accidental Modeller aims to reduce this friction by using AI to generate practical threat models from application descriptions.
-
-The objective is **not to replace security architects**, but to help engineering teams start meaningful security conversations much earlier in the Software Development Lifecycle.
+![Python](https://img.shields.io/badge/Python-3.14-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Latest-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Version](https://img.shields.io/badge/version-v0.2.0-orange)
 
 ---
 
-# Features
+## Why Accidental Modeller?
 
-Current capabilities include:
+Threat modeling often starts late in the software lifecycle because it is perceived as slow, manual, and dependent on security specialists.
 
-- AI-assisted threat identification
-- STRIDE-inspired threat generation
+Accidental Modeller aims to make threat modeling:
+
+- Simple
+- Repeatable
+- Fast
+- Developer-friendly
+
+Provide a description of your architecture and receive:
+
+- STRIDE threat analysis
+- Security requirements
+- Architecture review questions
+- Risk summary
+- Markdown report
+
+---
+
+## Features
+
+### Threat Generation
+
+- STRIDE-based threat identification
+- Authentication analysis
+- Trust boundary analysis
+- Sensitive data analysis
+- Database security analysis
+- Internet-facing service analysis
+- External integration analysis
+- Data flow analysis
+- Audit & logging analysis
+
+### Security Guidance
+
+- Actionable recommendations
+- Security requirements
+- Security review questions
 - Risk prioritization
-- Security recommendations
+
+### Reporting
+
+- Executive Summary
+- Risk Summary
+- STRIDE Coverage
+- Threat Register
+- Security Requirements
+- Security Review Questions
 - Markdown report generation
-- PDF report generation
-- FastAPI backend
-- Modular prompt engine
-
-Upcoming features:
-
-- DFD (Data Flow Diagram) support
-- OWASP ASVS mapping
-- MITRE ATT&CK mapping
-- Multi-model LLM support
-- Interactive web interface
-- Threat model versioning
-- Architecture diagram parsing
-- Export to Microsoft Threat Modeling Tool
 
 ---
 
-# Technology Stack
+## Tech Stack
 
-- Python
+- Python 3.14+
 - FastAPI
-- OpenAI API
-- ReportLab
-- Docker
+- Pydantic
+- Uvicorn
+- Pytest
 
 ---
 
-# Project Structure
-
-```
-accidental-modeller/
-│
-├── app/
-│   ├── db.py
-│   ├── main.py
-│   ├── models.py
-│   ├── prompts.py
-│   ├── report_generator.py
-│   └── threat_engine.py
-│
-├── examples/
-├── tests/
-├── Dockerfile
-├── requirements.txt
-└── README.md
-```
-
----
-
-# Installation
+## Installation
 
 Clone the repository
 
@@ -111,7 +102,7 @@ Activate it
 
 Windows
 
-```bash
+```powershell
 .venv\Scripts\activate
 ```
 
@@ -129,33 +120,13 @@ pip install -r requirements.txt
 
 ---
 
-# Configuration
-
-Create a `.env` file in the project root.
-
-Example
-
-```env
-OPENAI_API_KEY=your_api_key_here
-```
-
----
-
-# Running the Application
-
-Start the FastAPI server
+## Running the API
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Open
-
-```
-http://127.0.0.1:8000
-```
-
-Swagger documentation
+Swagger UI
 
 ```
 http://127.0.0.1:8000/docs
@@ -163,90 +134,116 @@ http://127.0.0.1:8000/docs
 
 ---
 
-# Example Workflow
+## Example Input
 
-1. Describe your application.
-2. Submit the application details.
-3. The AI engine analyses the architecture.
-4. Threats are identified.
-5. Security recommendations are generated.
-6. A Markdown and PDF report is produced.
-
----
-
-# Roadmap
-
-## Version 0.1
-
-- Basic threat generation
-- Report generation
-- FastAPI backend
-
-## Version 0.2
-
-- Better prompts
-- STRIDE categorisation
-- Improved report formatting
-
-## Version 0.3
-
-- OWASP ASVS mapping
-- MITRE ATT&CK mapping
-- Risk scoring improvements
-
-## Version 0.4
-
-- Architecture diagram support
-- Mermaid diagrams
-- Interactive UI
-
-## Version 1.0
-
-- Complete AI-assisted threat modeling platform
-- Multi-model support
-- Plugin architecture
-- Team collaboration
+```json
+{
+  "system_name": "Payment Processing Platform",
+  "description": "Internet-facing payment platform",
+  "components": [
+    "Web Application",
+    "API Gateway",
+    "Payment Service",
+    "PostgreSQL Database"
+  ],
+  "authentication": "OAuth 2.0 with JWT",
+  "sensitive_data": [
+    "Customer PII",
+    "Payment Tokens"
+  ]
+}
+```
 
 ---
 
-# Screenshots
+## Output
 
-Coming soon. Screenshots will be added as the project evolves.
+Accidental Modeller generates:
 
----
-
-# Contributing
-
-Contributions are welcome.
-
-If you find a bug, have an idea for improvement, or would like to add a feature, please open an Issue or submit a Pull Request.
-
----
-
-# Security
-
-If you discover a security vulnerability, please report it responsibly instead of opening a public issue.
+- Executive Summary
+- STRIDE Coverage
+- Risk Summary
+- Threat Register
+- Security Requirements
+- Security Review Questions
+- Markdown Report
 
 ---
 
-# License
+## Project Structure
 
-This project is licensed under the MIT License.
+```
+app/
+│
+├── main.py
+├── models.py
+├── threat_engine.py
+└── report_generator.py
+
+tests/
+
+examples/
+
+requirements.txt
+README.md
+CHANGELOG.md
+LICENSE
+```
 
 ---
 
-# About the Author
+## Running Tests
 
-Hi, I'm **Vanshidhar**, also known as **The Curious Engineer**.
+```bash
+python -m pytest
+```
 
-I'm a cybersecurity professional focused on building practical tools and sharing knowledge around:
+Compile check
 
-- Application Security
-- Threat Modeling
-- DevSecOps
-- AI Security
-- Secure Software Engineering
+```bash
+python -m compileall app tests
+```
 
-This repository is part of my journey to build engineer-friendly security tooling in the open.
+---
 
-If you find this project useful, consider giving it a ⭐.
+## Roadmap
+
+### v0.2
+
+- Improved STRIDE engine
+- Better security review questions
+- Improved Markdown reporting
+- Python 3.14 support
+
+### v0.3
+
+- Modular architecture
+- HTML reports
+- PDF reports
+- Plugin-based rule engine
+- Optional MITRE ATT&CK mapping
+- Optional OWASP ASVS mapping
+
+---
+
+## Contributing
+
+Contributions, issues, feature requests, and suggestions are welcome.
+
+Please open an Issue before submitting large changes.
+
+---
+
+## License
+
+MIT License
+
+---
+
+## Author
+
+**Vanshidhar Singh**
+
+Cybersecurity | Application Security | Threat Modeling | DevSecOps
+
+If this project helped you, consider giving it a ⭐ on GitHub.
